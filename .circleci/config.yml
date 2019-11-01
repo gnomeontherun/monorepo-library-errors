@@ -11,7 +11,7 @@ jobs:
       - run: cd monorepo && ng update @angular/core@next @angular/cli@next --force --allowDirty=true
       - run: cd monorepo && ng generate application dev --defaults
       - run: cd monorepo && ng generate library shared
-      - run: cp .dev-app.module.ts .monorepo/projects/dev/src/app/dev-app.module.ts
+      - run: cp dev-app.module.ts monorepo/projects/dev/src/app/dev-app.module.ts
       - run: ng build --prod dev
 # Workflows
 workflows:
