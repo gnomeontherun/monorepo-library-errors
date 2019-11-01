@@ -9,7 +9,7 @@ jobs:
       - run: echo "n" | sudo npm install -g @angular/cli@next
       - run: ng new monorepo-v9rc0 --createApplication=false
       - run: cd monorepo-v9rc0
-      - run: ng update @angular/core@next @angular/cli@next --force
+      - run: ng update @angular/core@next @angular/cli@next --force --allowDirty=true
       - run: ng generate application dev --defaults
       - run: ng generate library shared
       - run: cp ../dev-app.module.ts ./projects/dev/src/app/dev-app.module.ts
