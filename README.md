@@ -2,6 +2,8 @@
 
 In the latest v9 of Angular, a monorepo style project built with the CLI doesn't properly build with Ivy when using a library in an application.
 
+[![CircleCI](https://circleci.com/gh/gnomeontherun/monorepo-library-errors.svg?style=svg)](https://circleci.com/gh/gnomeontherun/monorepo-library-errors)
+
 The following steps will create a fresh CLI project.
 
 ```bash

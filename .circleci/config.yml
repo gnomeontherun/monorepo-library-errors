@@ -12,8 +12,8 @@ jobs:
       - run: cd monorepo && ng generate application dev --defaults
       - run: cd monorepo && ng generate library shared
       - run: cp dev-app.module.ts monorepo/projects/dev/src/app/app.module.ts
-      - run: cd monorepo && ng build --prod dev
       - run: tar -cvf artifact.tar monorepo
+      - run: cd monorepo && ng build --prod dev
       - store_artifacts:
           path: artifact.tar
 # Workflows
