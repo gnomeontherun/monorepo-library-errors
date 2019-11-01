@@ -15,7 +15,7 @@ jobs:
       - run: cd monorepo && ng build --prod dev
       - run: tar -cvf artifact.tar monorepo
       - store_artifacts:
-          path: monorepo.tar
+          path: artifact.tar
 # Workflows
 workflows:
   version: 2
