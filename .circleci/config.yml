@@ -1,0 +1,22 @@
+version: 2
+# Jobs
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: npm install -g @angular/cli@next
+      - run: ng new monorepo-v9rc0 --createApplication=false
+      - run: cd monorepo-v9rc0
+      - run: ng update @angular/core@next @angular/cli@next --force
+      - run: ng generate application dev --defaults
+      - run: ng generate library shared
+      - run: cp ../dev-app.module.ts ./projects/dev/src/app/dev-app.module.ts
+      - run: ng build --prod dev
+# Workflows
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
