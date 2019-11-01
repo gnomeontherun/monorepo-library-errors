@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: npm install -g @angular/cli@next
+      - run: sudo npm install -g @angular/cli@next
       - run: ng new monorepo-v9rc0 --createApplication=false
       - run: cd monorepo-v9rc0
       - run: ng update @angular/core@next @angular/cli@next --force
