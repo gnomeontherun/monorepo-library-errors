@@ -7,12 +7,11 @@ jobs:
     steps:
       - checkout
       - run: echo "n" | sudo npm install -g @angular/cli@next
-      - run: ng new monorepo-v9rc0 --createApplication=false
-      - run: cd monorepo-v9rc0
-      - run: ng update @angular/core@next @angular/cli@next --force --allowDirty=true
-      - run: ng generate application dev --defaults
-      - run: ng generate library shared
-      - run: cp ../dev-app.module.ts ./projects/dev/src/app/dev-app.module.ts
+      - run: ng new monorepo --createApplication=false
+      - run: cd monorepo && ng update @angular/core@next @angular/cli@next --force --allowDirty=true
+      - run: cd monorepo && ng generate application dev --defaults
+      - run: cd monorepo && ng generate library shared
+      - run: cp .dev-app.module.ts .monorepo/projects/dev/src/app/dev-app.module.ts
       - run: ng build --prod dev
 # Workflows
 workflows:
